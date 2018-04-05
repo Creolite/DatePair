@@ -16,21 +16,3 @@ use Illuminate\Foundation\Inspiring;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
-
-/*
- Command to perform git push to remote repo, then, pull from remote repo to vps
-*/
-$deploy = 'deploy'
-        . ' {--d|directory : The directory that houses the project}';
-// Artisan::command($deploy, function () {
-    // $options = $this->options();   $directory = $options['directory'];
-    // OR
-    // $directory = $this->option('directory');
-    // OR
-Artisan::command($deploy, function ($directory){
-    if(!$directory){
-        $directory = $this->ask('Enter the directory that houses the project');
-    }
-    $this->info("Deploying Project '{$ret_var}'! Please wait...");
-
-})->describe('Build the project in the specified directory');

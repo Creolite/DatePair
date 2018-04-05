@@ -25,14 +25,14 @@
     <link rel="stylesheet" href="{{url('assets/fonts/material-icons/font-material-icons.css')}}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{url('assets/css/bootstrap-material-design.css')}}">
-    <link rel="stylesheet" href="{{url('assets/css/ripples.min.css')}}">
-    <link rel="stylesheet" href="{{url('assets/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{_asset('assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{_asset('assets/css/bootstrap-material-design.css')}}">
+    <link rel="stylesheet" href="{{_asset('assets/css/ripples.min.css')}}">
+    <link rel="stylesheet" href="{{_asset('assets/css/font-awesome.min.css')}}">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="{{url('assets/style.css')}}">
+    <link rel="stylesheet" href="{{_asset('assets/style.css')}}">
     <!-- Colors CSS -->
-    <link rel="stylesheet" href="{{url('assets/css/colors.css')}}">
+    <link rel="stylesheet" href="{{_asset('assets/css/colors.css')}}">
 
     {{-- FOR DEPLOYMENT --}}
     <!-- Scripts -->
@@ -112,7 +112,7 @@
                                                             {{ __('Logout') }}
                                                         </a>
                                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                            @csrf
+                                                            {{ csrf_field() }}
                                                         </form>
                                                     </li>
                                                 </ul>
@@ -142,10 +142,10 @@
         </main>
     </div>
 </body>
-<script src="{{url('assets/js/jquery.js')}}"></script>
-<script src="{{url('assets/js/bootstrap.js')}}"></script>
-<script src="{{url('assets/js/ripples.min.js')}}"></script>
-<script src="{{url('assets/js/material.min.js')}}"></script>
-<script src="{{url('assets/js/custom.js')}}"></script>
+<script src="{{_asset('assets/js/jquery.js')}}"></script>
+<script src="{{_asset('assets/js/bootstrap.js')}}"></script>
+<script src="{{_asset('assets/js/ripples.min.js')}}"></script>
+<script src="{{_asset('assets/js/material.min.js')}}"></script>
+<script src="{{_asset('assets/js/custom.js')}}"></script>
 @stack('scripts')
 </html>

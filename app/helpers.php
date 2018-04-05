@@ -8,4 +8,10 @@ if (! function_exists('_s')) {
     }
 }
 
+if (! function_exists('_asset')) {
+    function _asset($path){
+        return !empty($_SERVER['HTTPS']) ? secure_asset($path) : url($path);
+    }
+}
+
 

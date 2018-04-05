@@ -173,7 +173,8 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        // Uncommented 2018-03-31 for ChatXP Broadcast
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -230,7 +231,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // Added 2018-02-08 for SSH
         'SSH' => Collective\Remote\RemoteFacade::class,
-        
+        // Added 2018-03-31 for ChatXP Broadcast
+//        'Pusher' => Pusher\Pusher::class,
     ],
 
 ];
