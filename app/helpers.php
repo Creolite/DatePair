@@ -10,8 +10,8 @@ if (! function_exists('_s')) {
 
 if (! function_exists('_asset')) {
     function _asset($path){
-        return !empty($_SERVER['HTTPS']) ? secure_asset($path) : url($path);
+        $url = env('APP_URL');
+        $local = stristr($url, 'localhost') or stristr($url, '127.0.');
+        return $local ? secure_asset($path) : url($path);
     }
 }
-
-
