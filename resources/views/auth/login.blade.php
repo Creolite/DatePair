@@ -19,7 +19,7 @@
                             <div class="panel-body">
                                 {{--<form class="sidebar-login" action="{{route('signin')}}" method="post">--}}
                                 <form class="sidebar-login" action="{{route('login')}}" method="POST">
-                                    @csrf
+                                    {{ csrf_field() }}
                                     <input type="email" id="email" name="email" value="{{ old('email') }}"
                                            placeholder="{{ __('Email Address') }}" required autofocus
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}">

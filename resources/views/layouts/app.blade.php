@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{url('assets/fonts/material-icons/font-material-icons.css')}}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{url('assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/bootstrap-material-design.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/ripples.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/font-awesome.min.css')}}">

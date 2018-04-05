@@ -16,7 +16,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <form class="sidebar-login" action="{{route('register')}}" method="POST">
-                            @csrf
+                            {{ csrf_field() }}
 
                             <input type="text" id="name" name="name" value="{{ old('name') }}"
                                    placeholder="{{ __('Name') }}" required autofocus

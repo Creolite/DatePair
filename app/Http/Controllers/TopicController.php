@@ -26,7 +26,7 @@ class TopicController extends Controller {
 //        return view('comment.one', compact('topic'));
     }
 
-    public function createTopic(Request $request){
+    public function create(Request $request){
 	 	$user_id = Auth::user()->id;
 	 	$this->validateTopic($request);
 	 	
