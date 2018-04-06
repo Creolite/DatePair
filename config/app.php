@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => 'Laravel',
 
     /*
     |--------------------------------------------------------------------------
@@ -173,14 +173,10 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // Uncommented 2018-03-31 for ChatXP Broadcast
-        App\Providers\BroadcastServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // Added 2018-02-08 for SSH
-        Collective\Remote\RemoteServiceProvider::class,
-        
     ],
 
     /*
@@ -229,10 +225,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        // Added 2018-02-08 for SSH
-        'SSH' => Collective\Remote\RemoteFacade::class,
-        // Added 2018-03-31 for ChatXP Broadcast
-//        'Pusher' => Pusher\Pusher::class,
+
     ],
 
 ];
