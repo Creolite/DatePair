@@ -20,7 +20,6 @@
                                     <div class="panel-title">
                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$topic->id}}" aria-expanded="false" aria-controls="collapseTwo">
                                             <header class="topic-title clearfix">
-                                                <input type="checkbox" @if($topic->share_gp) checked @endif />
                                                 <h3>{{$topic->title}}</h3>
                                                 <small><strong>Posted: {{$topic->created_at->diffForHumans()}}</strong></small>
                                             </header>
