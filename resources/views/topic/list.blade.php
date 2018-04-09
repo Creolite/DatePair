@@ -1,6 +1,9 @@
-<div class="home-tab clearfix">
+@extends('home')
+
+@section('content')
+    <div class="home-tab clearfix">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#knowledge_tab"> Featured Topics ({{count($topics)}})</a></li>
+        <li class="active"><a href="#knowledge_tab"> All Topics ({{count($topics)}})</a></li>
     </ul>
 
     <div class="tab-content">
@@ -17,7 +20,8 @@
                                     <div class="panel-title">
                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$topic->id}}" aria-expanded="false" aria-controls="collapseTwo">
                                             <header class="topic-title clearfix">
-                                                <h3>{{$topic->name}}</h3>
+                                                <input type="checkbox" @if($topic->share_gp) checked @endif />
+                                                <h3>{{$topic->title}}</h3>
                                                 <small><strong>Posted: {{$topic->created_at->diffForHumans()}}</strong></small>
                                             </header>
                                         </a>
@@ -36,7 +40,7 @@
                                                 <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Unlike">
                                                     <i class="material-icons" style="color: #ff6666">thumb_down</i>
                                                 </a>
-                                                <span class="">{{$topic->dislikes}}</span>
+                                                <span class="">{{$topic->unlikes}}</span>
                                             </div><!-- end left -->
 
                                             <div class="pull-right">
@@ -57,7 +61,7 @@
                                             <div class="col-sm-10">
                                                 <h4>{{$topic->description}}</h4>
 
-                                                <a href="{{ route('topic', ['topic' => $topic->name_slug])}}" class="readmore" title="">Continue reading →</a>
+                                                <a href="{{ route('topic', ['topic' => $topic->title_slug])}}" class="readmore" title="">Continue reading →</a>
                                             </div>
                                         </div><!-- end tpic-desc -->
 
@@ -91,15 +95,14 @@
                             </article><!-- end article well -->
                         @endforeach
 
-                            <article class="well clearfix">
-                                <ul class="pagination">
-                                    <li class="disabled"><a href="javascript:void(0)">&laquo;</a></li>
-                                    <li class="active"><a href="javascript:void(0)">1</a></li>
-                                    <li><a href="javascript:void(0)">2</a></li>
-                                    <li><a href="javascript:void(0)">3</a></li>
-                                    <li><a href="javascript:void(0)">&raquo;</a></li>
-                                </ul>
-                            </article>
+                        @if( count($topics) )
+                            @include( 'components.pagination' )
+
+                        @else
+                            @include( 'topic.empty' )
+
+                        @endif
+
                     </div><!-- end panel -->
 
                 </div>
@@ -107,3 +110,4 @@
         </div>
     </div>
 </div>
+@endsection

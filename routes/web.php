@@ -15,9 +15,12 @@ Auth::routes();
 
 Route::get('', 'HomeController@index')->name('home');
 
-Route::get('topics/', 'TopicController@index')->name('topics');
-Route::get('topics/create', 'TopicController@create');
+Route::get('topics', 'TopicController@index')->name('topics');
+Route::get('topics/create', 'TopicController@create')->name('newTopic');
 Route::get('topics/{topic}', 'TopicController@show')->name('topic');
+Route::post('topics', 'TopicController@store')->name('addTopic');
+Route::get('topics/{topic}/edit', 'TopicController@edit')->name('editTopic');
+Route::put('topics/{topic}', 'TopicController@put')->name('saveTopic');
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('user', 'UserController', ['only' => [

@@ -6,9 +6,9 @@
                 @include('user.avatar', [ 'props' => ['image'] ])
             </div>
             <div class="col-sm-10">
-                <a href="{{ route('topic', ['topic' => $topic->name_slug])}}" class="readmore" title="Read more">
+                <a href="{{ route('topic', ['topic' => $topic->title_slug])}}" class="readmore" title="Read more">
                     <header class="topic-title clearfix">
-                        <h3>{{$topic->name}}</h3>
+                        <h3>{{$topic->title}}</h3>
                     </header>
                     <small><strong>Posted: {{$topic->created_at->diffForHumans()}}</strong></small>
                 </a>

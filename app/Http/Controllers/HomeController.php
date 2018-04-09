@@ -21,7 +21,9 @@ class HomeController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $topics = (new Topic)->latest()->paginate(3);
+        $topics = (new Topic)->latest()
+            ->where('featured', '1')
+            ->paginate(10);
         return view('home', [ 'topics' => $topics ]);
     }
 }

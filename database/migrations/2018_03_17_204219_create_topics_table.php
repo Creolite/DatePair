@@ -15,18 +15,21 @@ class CreateTopicsTable extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('title');
             $table->string('description');
-            $table->string('forums')->nullable();
-            $table->string('trends')->nullable();
-            $table->string('tags')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->integer('forums_id')->unsigned()->nullable();
             $table->integer('trends_id')->unsigned()->nullable();
-            $table->integer('tags_id')->unsigned()->nullable();
-            $table->bigInteger('likes');
-            $table->bigInteger('dislikes');
-            $table->string('name_slug')->unique();
+//            $table->integer('tags_id')->unsigned()->nullable();
+//            $table->string('forums')->nullable();
+//            $table->string('trends')->nullable();
+//            $table->string('tags')->nullable();
+            $table->tinyInteger('featured')->default(0);
+            $table->tinyInteger('privacy')->default(1);
+            $table->integer('share')->default(0);
+            $table->bigInteger('likes')->default(0);
+            $table->bigInteger('unlikes')->default(0);
+            $table->string('title_slug')->unique();
             $table->foreign('user_id')
                   ->references('id')->on('users')
                     ->onDelete('cascade');
@@ -36,9 +39,9 @@ class CreateTopicsTable extends Migration
             $table->foreign('trends_id')
                   ->references('id')->on('trends')
                     ->onDelete('cascade');
-            $table->foreign('tags_id')
+            /*$table->foreign('tags_id')
                   ->references('id')->on('tags')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade');*/
             $table->timestamps();
         });
     }

@@ -32,6 +32,10 @@
 SKELETON
 ************************************/
 
+* {
+    box-sizing: border-box; !important;
+}
+
 body {
     color: #727272;
     background-color: #f5f7fa;
@@ -76,16 +80,69 @@ FROM bootstrap.css
 .my-3 {
     margin-top: 1rem !important;
 }
+.mt-4,
+.my-4 {
+    margin-top: 1.5rem !important;
+}
 .mt-5,
 .my-5 {
     margin-top: 3rem !important;
 }
 
 /************************************
+FROM bootstrap.material.css
+************************************/
+/*.form-group.label-floating label.control-label,
+.form-group.label-placeholder label.control-label {
+    top: 0;
+    font-size: 16px;
+    line-height: 1.42857143;
+}
+.form-group.label-static label.control-label,
+.form-group.label-floating.is-focused label.control-label,
+.form-group.label-floating:not(.is-empty) label.control-label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+    line-height: 1.07142857;
+}
+.form-group.label-floating input.form-control:-webkit-autofill ~ label.control-label label.control-label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+    line-height: 1.07142857;
+}*/
+
+/************************************
 CUSTOM styles
 ************************************/
+/*.navbar.top, .navbar.top * {
+    max-height: 60px;
+}
+.navbar.top * {
+
+}*/
 .img-tiny {
     max-width: 65px;
+}
+.btn-text.top { vertical-align: text-top; }
+.btn-text.bottom { vertical-align: text-bottom; }
+.btn-text.left { margin-right: 10px; }
+.btn-text.right { margin-left: 10px; }
+
+.route-nav-btn:not(.inline) {
+    position: relative; z-index:2; top:-20px; left:-5px;
+}
+.route-nav-btn.inline {
+    padding: 10px;
+}
+.route-nav-btn button.btn-fab, .route-nav-btn a.btn-fab {
+    background-color: #dddddd; color: black;
+}
+
+input.disabled, select.disabled, textarea.disabled,
+input[disabled], select[disabled], textarea[disabled] {
+    cursor: default;
 }
 
 /************************************
@@ -451,7 +508,7 @@ hr.invis {
 
 .page-title .site-search {
     max-width: 600px;
-    margin: 30px auto 0
+    /*margin: 30px auto 0*/
 }
 
 .page-title .site-search .form-control {
@@ -468,7 +525,7 @@ hr.invis {
 }
 
 .site-search {
-    padding: 20px 20px 20px !important;
+    padding: 20px 0 !important;
 }
 
 .site-search .form-group {
@@ -1988,7 +2045,7 @@ body.home_alt .site-search .form-control {
     background-image: none;
     color:#989898;
     height: 70px;
-    padding:23px 30px;
+    /*padding:23px 30px;*/
 }
 
 body.home_alt .welcome .pull-left {

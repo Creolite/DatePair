@@ -3,6 +3,8 @@
 @section('content')
 <div class="well well-lg">
     <div class="row">
+        {{-- Nav Buttons --}}
+        @include('components.nav-buttons')
         {{-- Author --}}
         <div class="col-xs-2">
             @include('user.avatar', ['props' => ['name', 'image'] ])
@@ -12,7 +14,7 @@
         <div class="col-xs-10">
             {{-- Heading --}}
             <div class="clearfix" style="margin-left: 15px;">
-                <h1>{{$topic->name}}</h1>
+                <h1>{{$topic->title}}</h1>
                 <small class="">
                     Created: &emsp;<strong>{{$topic->created_at->diffForHumans()}}</strong>
                 </small>

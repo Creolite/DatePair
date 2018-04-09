@@ -14,21 +14,22 @@
 
                     @if( Route::is('home') )
 
-                        @include('home.search')
-
                         @include('topic.featured')
 
                         @include('home.widget')
 
-                    @endif
+                    @else
 
+                        @yield('content')
+
+                    @endif
                 </div>
                 <div class="clearfix"></div>
+
             </div>
 
             <div class="row">
 
-                @yield('content')
 
             </div>
         </div>

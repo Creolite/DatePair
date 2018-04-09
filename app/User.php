@@ -26,4 +26,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function createTopic(Topic $topic){
+        $this->topics()->save($topic);
+    }
+
+    public function topics(){
+        return $this->hasMany(Topic::class)->latest();
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class)->latest();
+    }
+
 }

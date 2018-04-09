@@ -11,7 +11,8 @@
             <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Unlike">
                 <i class="material-icons" style="color: #ff6666">thumb_down</i>
             </a>
-            <span class="icon-label left">{{$post->dislikes}}</span>
+{{--            <span class="icon-label left">{{$post->dislikes}}</span>--}}
+            <span class="icon-label left">{{$post->unlikes}}</span>
             {{-- Comments count --}}
             @if($replies == 'comments')
                 <span class="btn btn-default btn-fab btn-fab-mini" data-toggle="tooltip" data-placement="bottom" title="View {{$replies}}">

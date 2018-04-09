@@ -18,6 +18,8 @@ class CreateCommentsTable extends Migration
             $table->string('comment');
             $table->integer('user_id')->unsigned();
             $table->integer('topic_id')->unsigned();
+            $table->bigInteger('likes')->unsigned()->default(0);
+            $table->bigInteger('unlikes')->unsigned()->default(0);
 //            $table->text('image');
             $table->foreign('user_id')
                 ->references('id')->on('users')->onDelete('cascade');
